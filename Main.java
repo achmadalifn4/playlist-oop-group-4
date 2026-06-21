@@ -13,9 +13,50 @@ public class Main {
   private static Lagu[] listLagu = new Lagu[10];
 
   public static void main(String[] args) {
+
+    int jumlahLagu = 0;
+
+    // Membuat objek Admin dan Member
+    Admin admin = new Admin("Andi");
+    Member member = new Member("Budi");
+
+    // Menampilkan hak akses
+    admin.tampilkanAkses();
+    member.tampilkanAkses();
+
+    System.out.println();
+
+    // Admin menambahkan lagu
+    jumlahLagu = admin.tambahLagu(
+        listLagu,
+        jumlahLagu,
+        "Monokrom",
+        "Tulus",
+        3.50);
+
+    jumlahLagu = admin.tambahLagu(
+        listLagu,
+        jumlahLagu,
+        "Interaksi",
+        "Tulus",
+        4.00);
+
+    System.out.println();
+
+    // Member melihat daftar lagu
+    member.lihatDaftarLagu(listLagu, jumlahLagu);
+
+    System.out.println();
+
+    // Member mencari lagu
+    member.cariLagu(listLagu, jumlahLagu, "Monokrom");
+
+    System.out.println();
+
+    // Mencari lagu yang tidak ada
+    member.cariLagu(listLagu, jumlahLagu, "Hujan");
   }
 
-  // Method untuk mengambil daftar lagu
   public static Lagu[] getListLagu() {
     return listLagu;
   }

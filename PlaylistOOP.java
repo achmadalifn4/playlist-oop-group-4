@@ -8,7 +8,7 @@
  * - MUHAMAD FAIRUS [2902792090]
  */
 
-public class Main {
+public class PlaylistOOP {
   // Array untuk menyimpan daftar lagu
   private static Lagu[] listLagu = new Lagu[10];
 
